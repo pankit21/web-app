@@ -21,5 +21,25 @@ pipeline{
                 }
             }
         }
+
+          stage('Upload War file to Nexus'){
+            steps{
+             nexusArtifactUploader artifacts: [
+                 [
+                     artifactId: 'hiring', 
+                     classifier: '', 
+                     file: 'target/hiring.war', 
+                     type: 'war'
+                ]
+            ], 
+            credentialsId: 'nexus-paaword', 
+            groupId: 'in.javahome', 
+            nexusUrl: '3.110.84.165:8081', 
+            nexusVersion: 'nexus3', 
+            protocol: 'http', 
+            repository: 'Ram-repos', 
+            version: '0.1'
+            }
+        }
    }
 }
