@@ -41,5 +41,18 @@ pipeline{
             version: '0.1'
             }
         }
+
+           stage('Deploy War file to Tommcat'){
+            steps{
+               sshagent(['tomcat-ssh']) {
+                  sh """
+                    scp -o StrictHostKeyChecking=no target/*.war ubuntu@3.110.84.165:/opt/tomcat-9/webapps
+                    ssh -o StrictHostKeyChecking=no ubuntu@3.110.84.165 /opt/tomcat-9/bin/shutdown.sh
+                    ssh -o StrictHostKeyChecking=no ubuntu@3.110.84.165 /opt/tomcat-9/bin/startup.sh
+					
+		          """          
+               }
+            }
+        }
    }
 }
