@@ -34,7 +34,7 @@ pipeline{
             ], 
             credentialsId: 'nexus-paaword', 
             groupId: 'in.javahome', 
-            nexusUrl: '3.110.84.165:8081', 
+            nexusUrl: '13.233.78.237:8081', 
             nexusVersion: 'nexus3', 
             protocol: 'http', 
             repository: 'Ram-repos', 
@@ -46,9 +46,9 @@ pipeline{
             steps{
                sshagent(['tomcat-ssh']) {
                   sh """
-                    scp -o StrictHostKeyChecking=no target/*.war ubuntu@3.110.84.165:/opt/tomcat-9/webapps
-                    ssh -o StrictHostKeyChecking=no ubuntu@3.110.84.165 /opt/tomcat-9/bin/shutdown.sh
-                    ssh -o StrictHostKeyChecking=no ubuntu@3.110.84.165 /opt/tomcat-9/bin/startup.sh
+                    scp -o StrictHostKeyChecking=no target/*.war ubuntu@13.233.78.237:/opt/tomcat-9/webapps
+                    ssh -o StrictHostKeyChecking=no ubuntu@13.233.78.237 /opt/tomcat-9/bin/shutdown.sh
+                    ssh -o StrictHostKeyChecking=no ubuntu@13.233.78.237 /opt/tomcat-9/bin/startup.sh
 					
 		          """          
                }
