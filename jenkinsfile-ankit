@@ -32,7 +32,7 @@ pipeline{
             nexusVersion: 'nexus3', 
             protocol: 'http', 
             repository: 'ankit-p', 
-            version: '0.2'
+            version: '0.1'
             }
         }
 
