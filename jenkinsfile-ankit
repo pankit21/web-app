@@ -28,11 +28,11 @@ pipeline{
             ], 
             credentialsId: 'Nexus-cred', 
             groupId: 'in.javahome', 
-            nexusUrl: '16.171.227.179', 
+            nexusUrl: '16.171.227.179:8081', 
             nexusVersion: 'nexus3', 
             protocol: 'http', 
             repository: 'ankit-p', 
-            version: '0.1'
+            version: '0.2'
             }
         }
 
