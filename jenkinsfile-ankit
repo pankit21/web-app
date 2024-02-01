@@ -28,7 +28,7 @@ pipeline{
             ], 
             credentialsId: 'Nexus-cred', 
             groupId: 'in.javahome', 
-            nexusUrl: '16.171.227.179:8081', 
+            nexusUrl: '16.171.227.179', 
             nexusVersion: 'nexus3', 
             protocol: 'http', 
             repository: 'ankit-p', 
