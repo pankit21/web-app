@@ -38,7 +38,7 @@ pipeline{
 
            stage('Deploy War file to Tommcat'){
             steps{
-               sshagent(['tomcat-ssh']) {
+               sshagent(['tomcat-cred']) {
                   sh """
                     scp -o StrictHostKeyChecking=no target/*.war ubuntu@16.16.27.88:/opt/tomcat/webapps
                     ssh -o StrictHostKeyChecking=no ubuntu@16.16.27.88 /opt/tomcat/bin/shutdown.sh
